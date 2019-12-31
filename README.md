@@ -10,4 +10,10 @@ This python script checks the server status of Azur Lane, if any changes is dete
 # Dependencies
 
 **1. Discord Webhook**
-`pip install discord-webhook`
+`pip3 install discord-webhook`
+
+# How to Use
+1. Use crontab if you're hosting it on an linux server
+2. Use task scheduler if you're hosting it on windows
+3. Schedule the script to run every **X** intervals
+4. Profit?
