@@ -57,7 +57,6 @@ def state_change_check():
             changed = True
     if changed:
         update_json(fetch_new_json())
-        print(message_to_print)
         send_alert_discord(message_to_print)
 
 
