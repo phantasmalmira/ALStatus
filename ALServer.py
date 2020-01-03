@@ -22,7 +22,7 @@ def update_json(string: str):
 
 
 def get_json_data(string: str):
-    return sorted(json.loads(string), key=lambda i: i['id'])
+    return json.loads(string)
 
 
 def fetch_new_json():
@@ -35,15 +35,20 @@ def fetch_new_json():
 
 
 def fetch_old_json():
+    error_old = False
     try:
         f = io.open("ALServer.json", mode="r", encoding="utf-8")
         blhx_raw_old = f.read()
         f.close()
-        return blhx_raw_old
+        if blhx_raw_old == None:
+            error_old = True
+        else:
+            return blhx_raw_old
     except FileNotFoundError:
-        with io.open("ALServer.json", mode="w", encoding="utf-8") as u:
-            u.write(fetch_new_json())
-        u.close()
+        error_old = True
+    if error_old:
+        update_json(fetch_new_json())
+        exit()
 
 
 def state_change_check():
