@@ -5,8 +5,8 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 
 state_url = "http://blhxjploginapi.azurlane.jp/?cmd=load_server?"
 state = {
-    0: "Online",
-    1: "Offline"
+    0: "**Online**",
+    1: "**Offline**"
 }
 
 discord_api = {
